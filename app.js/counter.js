@@ -3,11 +3,10 @@
 
     const randomColorText = () => {
         let color = Math.floor(Math.random() * 16777215).toString(16);
-        for(count = color.length; count < 6; count++) {
+        while (color.length < 6) {
             color = "0" + color;
         }
-        
-        let randomColor = "#" + color;
+        return "#" + color;
     };
 
     const clickHandler = (e) => {
@@ -17,6 +16,12 @@
             $counter.textContent = currentCount + 1;
         } else {
             $counter.textContent = currentCount - 1;
+        }
+        
+        if ($counter.textContent === "0") {
+            $counter.style.color = "#000000";
+        } else {
+            $counter.style.color = randomColorText();
         }
     }
 
