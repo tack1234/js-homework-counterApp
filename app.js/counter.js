@@ -1,6 +1,14 @@
 (() => {
     const $counter = document.getElementById("js-counter");
 
+    const randomColor = () => {
+        let color = Math.floor(Math.random() * 16777215).toString(16);
+        for(count = color.length; count < 6; count++) {
+            color = "0" + color;
+        }
+    let randomColor = "#" + color;
+    };
+
     const clickHandler = (e) => {
         const $targetButton = e.currentTarget;
         let currentCount = parseInt($counter.textContent);
