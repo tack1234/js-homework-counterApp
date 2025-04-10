@@ -6,7 +6,8 @@
         for(count = color.length; count < 6; count++) {
             color = "0" + color;
         }
-    let randomColor = "#" + color;
+        
+        let randomColor = "#" + color;
     };
 
     const clickHandler = (e) => {
